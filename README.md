@@ -1,6 +1,18 @@
-# Foundational Statistics for Psycholinguistics
+# Foundational Statistics in (Psycho)linguistics
 
-This repository is a template for book, foundational statistics in psycholingustics. The book is organized around seven modules, with explanations, examples, exercises, datasets, and reporting guidance.
+This repository contains the source files for an online Quarto book on foundational statistics in psycholinguistics. The book is organized around seven modules, with explanations, examples, exercises, datasets, and reporting guidance.
+
+Repository:
+
+```text
+https://github.com/amits1ngh/foundational-statistics-psycholinguistics
+```
+
+Expected GitHub Pages site:
+
+```text
+https://amits1ngh.github.io/foundational-statistics-psycholinguistics/
+```
 
 ## Structure
 
@@ -36,12 +48,11 @@ The rendered HTML book will be created in `_book/`.
 
 ## Publish on GitHub Pages
 
-1. Create a new GitHub repository.
-2. Update `repo-url` in `_quarto.yml`.
-3. Push this folder to GitHub.
-4. In the GitHub repository, go to `Settings > Pages`.
-5. Set the source to `GitHub Actions`.
-6. Push to `main` or run the `Publish Quarto Book` workflow manually.
+1. Push this folder to `https://github.com/amits1ngh/foundational-statistics-psycholinguistics`.
+2. In the GitHub repository, go to `Settings > Pages`.
+3. Set the source to `GitHub Actions`.
+4. Push to `main` or run the `Publish Quarto Book` workflow manually.
+5. After the workflow finishes, open `https://amits1ngh.github.io/foundational-statistics-psycholinguistics/`.
 
 ## Editing Chapters
 
@@ -63,5 +74,6 @@ git status
 quarto preview
 git add .
 git commit -m "Create initial course book scaffold"
-git push
+git remote add origin https://github.com/amits1ngh/foundational-statistics-psycholinguistics.git
+git push -u origin main
 ```

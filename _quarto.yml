@@ -6,13 +6,13 @@ project:
     browser: true
 
 book:
-  title: "Foundational Statistics for Psycholinguistics"
-  subtitle: "A practical introduction for humanities students"
-  author: "Your Name"
+  title: "Foundational Statistics in (Psycho)linguistics"
+  subtitle: "A practical introduction with examples"
+  author: "Amit Singh"
   date: today
   reader-mode: true
   search: true
-  repo-url: https://github.com/YOUR-USERNAME/foundational-statistics-psycholinguistics
+  repo-url: https://github.com/amits1ngh/foundational-statistics-psycholinguistics
   repo-actions: [edit, issue]
   chapters:
     - index.qmd
