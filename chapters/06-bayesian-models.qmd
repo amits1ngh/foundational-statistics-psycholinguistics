@@ -1,0 +1,94 @@
+# Bayesian Models
+
+## Module Overview
+
+This module introduces Bayesian thinking as a way to combine prior assumptions, data, and uncertainty. The focus is conceptual first, with modeling examples added later.
+
+## Learning Objectives
+
+After this module, students should be able to:
+
+- Explain the Bayesian mindset in plain language.
+- Distinguish priors, likelihood, and posterior distributions.
+- Understand prior predictive and posterior predictive checks.
+- Interpret Bayesian regression estimates.
+- Recognize hierarchical Bayesian models as relatives of mixed models.
+
+## Key Questions
+
+- What assumptions are present before seeing the data?
+- How does the likelihood connect the model to the observations?
+- What does the posterior distribution represent?
+- Does the model generate plausible data?
+- How can uncertainty be reported without relying only on binary decisions?
+
+## Core Concepts
+
+### Bayesian Mindset
+
+Introduce Bayesian analysis as updating uncertainty about parameters after observing data.
+
+### Priors, Likelihood, Posterior
+
+Explain each component and use simple visual examples where possible.
+
+### Prior Predictive Checks
+
+Discuss checking whether the priors imply plausible data before fitting the model.
+
+### Posterior Predictive Checks
+
+Discuss checking whether the fitted model can reproduce important patterns in the observed data.
+
+### Bayesian Regression
+
+Connect Bayesian regression to the regression models from Module 4. Emphasize posterior distributions for intercepts, slopes, predictions, and contrasts.
+
+### Hierarchical Bayesian Models
+
+Connect hierarchical Bayesian models to mixed models from Module 5. Discuss partial pooling and group-level variation.
+
+::: {.callout-note title="Teaching Example Placeholder"}
+Add a small example where a weakly informative prior prevents implausible estimates or makes assumptions visible.
+:::
+
+## Worked Example
+
+Add a dataset later and guide students through:
+
+1. Writing a model in words.
+2. Choosing and checking priors.
+3. Fitting a Bayesian regression.
+4. Checking posterior predictions.
+5. Reporting posterior summaries and credible intervals.
+
+```r
+# Placeholder for future R code
+# Add a brms, rstanarm, or rethinking example later.
+```
+
+```python
+# Placeholder for future Python code
+# Add a PyMC or Bambi example later.
+```
+
+## Practice
+
+- Write a prior expectation in words before writing it mathematically.
+- Decide whether a prior is weakly informative, skeptical, or strong.
+- Interpret a posterior interval.
+- Compare a confidence interval statement with a credible interval statement.
+
+## Reflection
+
+- Which assumptions become more visible in Bayesian analysis?
+- How can priors be justified transparently?
+- What does model checking contribute beyond parameter summaries?
+
+## Reporting Checklist
+
+- Describe priors and justify them.
+- Report posterior medians or means with credible intervals.
+- Include model-checking results.
+- Avoid interpreting credible intervals as automatic proof of practical importance.
+- Make clear what scale the estimates are on.

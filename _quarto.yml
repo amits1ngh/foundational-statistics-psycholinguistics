@@ -1,0 +1,51 @@
+project:
+  type: book
+  output-dir: _book
+  preview:
+    port: 4200
+    browser: true
+
+book:
+  title: "Foundational Statistics for Psycholinguistics"
+  subtitle: "A practical introduction for humanities students"
+  author: "Your Name"
+  date: today
+  reader-mode: true
+  search: true
+  repo-url: https://github.com/YOUR-USERNAME/foundational-statistics-psycholinguistics
+  repo-actions: [edit, issue]
+  chapters:
+    - index.qmd
+    - part: "Course Modules"
+      chapters:
+        - chapters/01-humanities-questions-data.qmd
+        - chapters/02-describing-visualizing-data.qmd
+        - chapters/03-statistical-inference.qmd
+        - chapters/04-regression-models.qmd
+        - chapters/05-mixed-models.qmd
+        - chapters/06-bayesian-models.qmd
+        - chapters/07-reporting-mini-project.qmd
+    - part: "Course Materials"
+      chapters:
+        - chapters/project-guidelines.qmd
+        - chapters/resources.qmd
+        - chapters/references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-copy: true
+    code-fold: false
+    code-tools: true
+    fig-align: center
+
+execute:
+  freeze: auto
+
+editor: visual

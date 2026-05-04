@@ -1,0 +1,20 @@
+/*-- scss:defaults --*/
+
+/*-- scss:rules --*/
+
+.callout {
+  border-radius: 6px;
+}
+
+.chapter-summary {
+  border-left: 4px solid #406a7c;
+  padding-left: 1rem;
+}
+
+table {
+  font-size: 0.95rem;
+}
+
+code {
+  font-size: 0.92em;
+}

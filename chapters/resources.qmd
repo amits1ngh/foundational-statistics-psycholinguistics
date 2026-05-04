@@ -1,0 +1,62 @@
+# Resources
+
+## Software
+
+Add installation and setup instructions for the tools used in the course.
+
+Suggested options:
+
+- Quarto for rendering the book and reproducible reports.
+- R and RStudio for R-based analysis.
+- Python and Jupyter for Python-based analysis.
+- Git and GitHub for version control and publishing.
+
+## Course Conventions
+
+Document conventions here, such as:
+
+- File naming.
+- Data folder structure.
+- Whether examples use R, Python, or both.
+- Required package versions.
+- Citation style.
+- Assignment submission format.
+
+## Dataset Documentation Template
+
+```markdown
+# Dataset Name
+
+## Source
+
+## Unit of Observation
+
+## Variables
+
+| Variable | Type | Description |
+|---|---|---|
+| participant | categorical | Participant identifier |
+| item | categorical | Item identifier |
+| condition | categorical | Experimental condition |
+| response | continuous | Outcome measurement |
+
+## Exclusions
+
+## Notes
+```
+
+## Example File Structure
+
+```text
+project-name/
+  data/
+    raw/
+    processed/
+  scripts/
+  figures/
+  report.qmd
+```
+
+## Further Reading Placeholder
+
+Add books, articles, tutorials, and package documentation here as the course develops.

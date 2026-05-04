@@ -1,0 +1,86 @@
+# Research Reporting and Mini-Project
+
+## Module Overview
+
+This module brings the course together through model visualization, results writing, limitations, reproducible reporting, and student presentations. Students apply the earlier modules to a small analysis project.
+
+## Learning Objectives
+
+After this module, students should be able to:
+
+- Visualize model estimates and predictions.
+- Write statistical results in a clear and cautious style.
+- Discuss limitations of data, design, and models.
+- Produce a reproducible report.
+- Present a small statistical analysis to an audience.
+
+## Key Questions
+
+- What should the reader learn from the analysis?
+- Which model outputs need to be translated into prose?
+- Which visualizations support interpretation?
+- What are the limits of the data and model?
+- Can another person reproduce the result?
+
+## Core Concepts
+
+### Model Visualization
+
+Cover coefficient plots, predicted values, marginal effects, uncertainty intervals, raw data overlays, and diagnostics.
+
+### Writing Results
+
+Discuss how to state the research question, model, estimate, uncertainty, and interpretation without overclaiming.
+
+### Limitations
+
+Address sample size, sampling procedure, measurement quality, missingness, generalizability, model assumptions, and alternative explanations.
+
+### Reproducible Report
+
+Introduce reproducible documents, version control, file organization, code comments, computational environment notes, and data documentation.
+
+### Student Presentations
+
+Provide guidance for short presentations: question, data, method, key result, limitation, and next step.
+
+::: {.callout-tip title="Reporting Principle"}
+A good statistical report is not a software transcript. It explains what was estimated, why it matters, how uncertain it is, and what limits the conclusion.
+:::
+
+## Mini-Project Structure
+
+Students can organize their final report with the following sections:
+
+1. Research question
+2. Data description
+3. Variables and design
+4. Descriptive analysis
+5. Model specification
+6. Model results
+7. Visualization
+8. Interpretation
+9. Limitations
+10. Reproducibility note
+
+## Practice
+
+- Rewrite a statistical output table as a paragraph.
+- Create a plot of model predictions with uncertainty.
+- Identify three limitations of a model-based claim.
+- Prepare a three-minute presentation of one analysis.
+
+## Reflection
+
+- What does the model answer, and what does it not answer?
+- Which choices would be made differently with more time or better data?
+- How can statistical reporting remain accessible to humanities audiences?
+
+## Reporting Checklist
+
+- State the research question before the model.
+- Describe data and exclusions.
+- Report the model formula and software used.
+- Use figures to support interpretation.
+- Discuss limitations directly.
+- Include enough information for reproducibility.

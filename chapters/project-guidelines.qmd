@@ -1,0 +1,70 @@
+# Mini-Project Guidelines
+
+## Purpose
+
+The mini-project gives students a chance to apply the course workflow to a small research question. The project should be limited in scope, transparent in its assumptions, and reproducible.
+
+## Recommended Project Scope
+
+A suitable mini-project should include:
+
+- A focused research question.
+- A small dataset with documented variables.
+- At least one descriptive table or plot.
+- One statistical model appropriate to the question and outcome.
+- A written interpretation of the result.
+- A short discussion of limitations.
+
+## Possible Data Sources
+
+Add course-approved data sources here. Examples might include:
+
+- A small experimental dataset from class.
+- A cleaned corpus-derived dataset.
+- A published teaching dataset.
+- A survey or annotation dataset created during the course.
+
+## Suggested Report Template
+
+```markdown
+# Project Title
+
+## Research Question
+
+## Data
+
+## Variables
+
+## Descriptive Analysis
+
+## Model
+
+## Results
+
+## Visualization
+
+## Interpretation
+
+## Limitations
+
+## Reproducibility
+```
+
+## Assessment Rubric Placeholder
+
+| Criterion | Excellent | Developing | Needs Revision |
+|---|---|---|---|
+| Research question | Clear, focused, and answerable | Mostly clear | Too broad or unclear |
+| Data description | Variables and observations are well documented | Some details missing | Data structure unclear |
+| Analysis | Model matches question and data | Minor mismatch or missing justification | Model choice unclear |
+| Interpretation | Careful and connected to evidence | Some overclaiming | Mostly output reporting |
+| Reproducibility | Files and code are organized | Some reproducibility gaps | Difficult to reproduce |
+
+## Submission Checklist
+
+- Report file is included.
+- Data source is documented.
+- Code runs from a clean session.
+- Figures and tables are labeled.
+- Limitations are discussed.
+- References are included if needed.

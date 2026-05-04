@@ -1,0 +1,92 @@
+# Describing and Visualizing Data
+
+## Module Overview
+
+This module focuses on understanding data before formal modeling. Students learn to summarize variables, inspect distributions, compare groups, and use visualization as an analytical tool.
+
+## Learning Objectives
+
+After this module, students should be able to:
+
+- Compute and interpret basic descriptive statistics.
+- Describe the shape and spread of distributions.
+- Compare groups using summaries and plots.
+- Choose visualizations that match variable types.
+- Use exploratory data analysis to detect patterns and problems.
+
+## Key Questions
+
+- What does a typical value look like?
+- How variable are the observations?
+- Are there unusual observations or missing values?
+- Do groups differ in location, spread, or distributional shape?
+- What should be checked before fitting a model?
+
+## Core Concepts
+
+### Descriptive Statistics
+
+Introduce mean, median, mode, range, variance, standard deviation, interquartile range, proportions, and counts.
+
+### Distributions
+
+Discuss symmetry, skew, heavy tails, multimodality, floor effects, ceiling effects, and transformations.
+
+### Group Comparisons
+
+Show how descriptive comparisons differ from inferential claims. Focus on group means, medians, proportions, and uncertainty around summaries.
+
+### Visualization
+
+Cover histograms, density plots, boxplots, violin plots, scatterplots, line plots, bar charts, and raw-data plots.
+
+::: {.callout-tip title="Visualization Principle"}
+Prefer plots that show the structure of the data directly. Summary-only plots can hide variation, outliers, and repeated observations.
+:::
+
+### Exploratory Data Analysis
+
+Introduce EDA as a disciplined process: inspect variables, check missingness, examine distributions, compare groups, and document choices.
+
+## Worked Example
+
+Add a dataset later and guide students through:
+
+1. Summarizing one continuous variable.
+2. Visualizing its distribution.
+3. Comparing it across two or more groups.
+4. Checking whether any values require explanation.
+5. Writing a short descriptive paragraph.
+
+```r
+# Placeholder for future R code
+# summary(data$response_time)
+# hist(data$response_time)
+```
+
+```python
+# Placeholder for future Python code
+# data["response_time"].describe()
+# data["response_time"].hist()
+```
+
+## Practice
+
+- Choose the best plot for each variable type.
+- Compare two groups using both a table and a figure.
+- Write a caption that describes the main pattern without overclaiming.
+- Identify at least one data-quality issue from a plot.
+
+## Reflection
+
+- Which summaries are robust to extreme values?
+- When can a mean be misleading?
+- What information should a plot reveal that a table does not?
+
+## Reporting Checklist
+
+- Report appropriate measures of center and spread.
+- Include sample sizes for each group.
+- Use plots that show raw observations when possible.
+- Label axes and units clearly.
+- Avoid inferential language before inference has been introduced.
