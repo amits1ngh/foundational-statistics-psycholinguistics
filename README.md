@@ -1,6 +1,6 @@
 # Foundational Statistics for Psycholinguistics
 
-This repository is a starter template for an online markdown book built with [Quarto](https://quarto.org/). The book is organized around seven teaching modules, with placeholders for explanations, examples, exercises, datasets, and reporting guidance.
+This repository is a template for book, foundational statistics in psycholingustics. The book is organized around seven modules, with explanations, examples, exercises, datasets, and reporting guidance.
 
 ## Structure
 
