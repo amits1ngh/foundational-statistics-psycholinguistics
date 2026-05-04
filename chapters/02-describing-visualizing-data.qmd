@@ -8,19 +8,19 @@ This module focuses on understanding data before formal modeling. Students learn
 
 After this module, students should be able to:
 
-- Compute and interpret basic descriptive statistics.
-- Describe the shape and spread of distributions.
-- Compare groups using summaries and plots.
-- Choose visualizations that match variable types.
-- Use exploratory data analysis to detect patterns and problems.
+-   Compute and interpret basic descriptive statistics.
+-   Describe the shape and spread of distributions.
+-   Compare groups using summaries and plots.
+-   Choose visualizations that match variable types.
+-   Use exploratory data analysis to detect patterns and problems.
 
 ## Key Questions
 
-- What does a typical value look like?
-- How variable are the observations?
-- Are there unusual observations or missing values?
-- Do groups differ in location, spread, or distributional shape?
-- What should be checked before fitting a model?
+-   What does a typical value look like?
+-   How variable are the observations?
+-   Are there unusual observations or missing values?
+-   Do groups differ in location, spread, or distributional shape?
+-   What should be checked before fitting a model?
 
 ## Core Concepts
 
@@ -52,19 +52,19 @@ Introduce EDA as a disciplined process: inspect variables, check missingness, ex
 
 Add a dataset later and guide students through:
 
-1. Summarizing one continuous variable.
-2. Visualizing its distribution.
-3. Comparing it across two or more groups.
-4. Checking whether any values require explanation.
-5. Writing a short descriptive paragraph.
+1.  Summarizing one continuous variable.
+2.  Visualizing its distribution.
+3.  Comparing it across two or more groups.
+4.  Checking whether any values require explanation.
+5.  Writing a short descriptive paragraph.
 
-```r
+``` r
 # Placeholder for future R code
 # summary(data$response_time)
 # hist(data$response_time)
 ```
 
-```python
+``` python
 # Placeholder for future Python code
 # data["response_time"].describe()
 # data["response_time"].hist()
@@ -72,21 +72,21 @@ Add a dataset later and guide students through:
 
 ## Practice
 
-- Choose the best plot for each variable type.
-- Compare two groups using both a table and a figure.
-- Write a caption that describes the main pattern without overclaiming.
-- Identify at least one data-quality issue from a plot.
+-   Choose the best plot for each variable type.
+-   Compare two groups using both a table and a figure.
+-   Write a caption that describes the main pattern without overclaiming.
+-   Identify at least one data-quality issue from a plot.
 
 ## Reflection
 
-- Which summaries are robust to extreme values?
-- When can a mean be misleading?
-- What information should a plot reveal that a table does not?
+-   Which summaries are robust to extreme values?
+-   When can a mean be misleading?
+-   What information should a plot reveal that a table does not?
 
 ## Reporting Checklist
 
-- Report appropriate measures of center and spread.
-- Include sample sizes for each group.
-- Use plots that show raw observations when possible.
-- Label axes and units clearly.
-- Avoid inferential language before inference has been introduced.
+-   Report appropriate measures of center and spread.
+-   Include sample sizes for each group.
+-   Use plots that show raw observations when possible.
+-   Label axes and units clearly.
+-   Avoid inferential language before inference has been introduced.

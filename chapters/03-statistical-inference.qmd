@@ -8,19 +8,19 @@ This module introduces uncertainty, sampling, probability distributions, confide
 
 After this module, students should be able to:
 
-- Explain why samples vary.
-- Distinguish sample summaries from population quantities.
-- Describe uncertainty using intervals and distributions.
-- Interpret p-values cautiously.
-- Report effect sizes alongside statistical evidence.
+-   Explain why samples vary.
+-   Distinguish sample summaries from population quantities.
+-   Describe uncertainty using intervals and distributions.
+-   Interpret p-values cautiously.
+-   Report effect sizes alongside statistical evidence.
 
 ## Key Questions
 
-- What would change if we collected the data again?
-- How does sampling create uncertainty?
-- What does a confidence interval communicate?
-- What does a p-value not communicate?
-- How large is an effect in a meaningful scale?
+-   What would change if we collected the data again?
+-   How does sampling create uncertainty?
+-   What does a confidence interval communicate?
+-   What does a p-value not communicate?
+-   How large is an effect in a meaningful scale?
 
 ## Core Concepts
 
@@ -56,18 +56,18 @@ A statistically detectable effect can be small, and a meaningful effect can be u
 
 Add a dataset later and guide students through:
 
-1. Estimating a group difference.
-2. Computing or visualizing uncertainty.
-3. Interpreting a confidence interval.
-4. Interpreting a p-value.
-5. Reporting an effect size in context.
+1.  Estimating a group difference.
+2.  Computing or visualizing uncertainty.
+3.  Interpreting a confidence interval.
+4.  Interpreting a p-value.
+5.  Reporting an effect size in context.
 
-```r
+``` r
 # Placeholder for future R code
 # t.test(response_time ~ condition, data = data)
 ```
 
-```python
+``` python
 # Placeholder for future Python code
 # from scipy import stats
 # stats.ttest_ind(group_a, group_b)
@@ -75,21 +75,21 @@ Add a dataset later and guide students through:
 
 ## Practice
 
-- Explain a confidence interval in one sentence.
-- Identify an incorrect interpretation of a p-value.
-- Compare statistical significance with practical relevance.
-- Rewrite a result so that the effect size is clear.
+-   Explain a confidence interval in one sentence.
+-   Identify an incorrect interpretation of a p-value.
+-   Compare statistical significance with practical relevance.
+-   Rewrite a result so that the effect size is clear.
 
 ## Reflection
 
-- What assumptions are hidden in an inferential statement?
-- What does the sample allow us to generalize to?
-- What should be reported when uncertainty is large?
+-   What assumptions are hidden in an inferential statement?
+-   What does the sample allow us to generalize to?
+-   What should be reported when uncertainty is large?
 
 ## Reporting Checklist
 
-- Report estimates with uncertainty intervals.
-- Include effect sizes.
-- Avoid saying that non-significant results prove no effect.
-- State the scale on which the effect is measured.
-- Connect statistical results to the research question.
+-   Report estimates with uncertainty intervals.
+-   Include effect sizes.
+-   Avoid saying that non-significant results prove no effect.
+-   State the scale on which the effect is measured.
+-   Connect statistical results to the research question.

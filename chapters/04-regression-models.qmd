@@ -8,20 +8,20 @@ This module introduces regression as a general framework for modeling relationsh
 
 After this module, students should be able to:
 
-- Explain linear regression as a model of conditional expectations.
-- Fit and interpret models with continuous and categorical predictors.
-- Understand the role of contrast coding.
-- Interpret interactions.
-- Check basic model assumptions.
-- Report model estimates in clear language.
+-   Explain linear regression as a model of conditional expectations.
+-   Fit and interpret models with continuous and categorical predictors.
+-   Understand the role of contrast coding.
+-   Interpret interactions.
+-   Check basic model assumptions.
+-   Report model estimates in clear language.
 
 ## Key Questions
 
-- What outcome is the model trying to explain?
-- Which predictors are included, and why?
-- What does the intercept mean?
-- What does a coefficient mean?
-- How does the interpretation change when predictors interact?
+-   What outcome is the model trying to explain?
+-   Which predictors are included, and why?
+-   What does the intercept mean?
+-   What does a coefficient mean?
+-   How does the interpretation change when predictors interact?
 
 ## Core Concepts
 
@@ -57,20 +57,20 @@ Add a regression example using a psycholinguistic outcome such as reading time, 
 
 Add a dataset later and guide students through:
 
-1. Defining the outcome and predictors.
-2. Fitting a simple linear model.
-3. Adding a categorical predictor.
-4. Adding an interaction.
-5. Visualizing predicted values.
-6. Writing a results paragraph.
+1.  Defining the outcome and predictors.
+2.  Fitting a simple linear model.
+3.  Adding a categorical predictor.
+4.  Adding an interaction.
+5.  Visualizing predicted values.
+6.  Writing a results paragraph.
 
-```r
+``` r
 # Placeholder for future R code
 # model <- lm(response_time ~ condition * proficiency, data = data)
 # summary(model)
 ```
 
-```python
+``` python
 # Placeholder for future Python code
 # import statsmodels.formula.api as smf
 # model = smf.ols("response_time ~ condition * proficiency", data=data).fit()
@@ -79,21 +79,21 @@ Add a dataset later and guide students through:
 
 ## Practice
 
-- Interpret an intercept and slope from a simple model.
-- Change the reference level of a categorical predictor and explain what changes.
-- Draw an interaction before interpreting coefficients.
-- Identify one model diagnostic plot and explain what it checks.
+-   Interpret an intercept and slope from a simple model.
+-   Change the reference level of a categorical predictor and explain what changes.
+-   Draw an interaction before interpreting coefficients.
+-   Identify one model diagnostic plot and explain what it checks.
 
 ## Reflection
 
-- Why is regression more flexible than a simple group comparison?
-- When does a coefficient answer the research question directly?
-- When should model predictions be plotted?
+-   Why is regression more flexible than a simple group comparison?
+-   When does a coefficient answer the research question directly?
+-   When should model predictions be plotted?
 
 ## Reporting Checklist
 
-- State the model formula.
-- Define the outcome and predictors.
-- Explain the coding of categorical predictors.
-- Report estimates, uncertainty, and effect sizes where relevant.
-- Include a visualization when interactions are central.
+-   State the model formula.
+-   Define the outcome and predictors.
+-   Explain the coding of categorical predictors.
+-   Report estimates, uncertainty, and effect sizes where relevant.
+-   Include a visualization when interactions are central.

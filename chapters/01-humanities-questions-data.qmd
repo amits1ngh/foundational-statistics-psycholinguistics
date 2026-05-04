@@ -8,20 +8,20 @@ This module introduces the movement from qualitative or theoretical questions to
 
 After this module, students should be able to:
 
-- Explain what can count as data in psycholinguistics and related humanities fields.
-- Distinguish variables from observations.
-- Identify common data types.
-- Describe basic study designs.
-- Recognize repeated observations in participant and item data.
-- Explain why tidy, long-format data are useful for analysis.
+-   Explain what can count as data in psycholinguistics and related humanities fields.
+-   Distinguish variables from observations.
+-   Identify common data types.
+-   Describe basic study designs.
+-   Recognize repeated observations in participant and item data.
+-   Explain why tidy, long-format data are useful for analysis.
 
 ## Key Questions
 
-- What does it mean to observe evidence for a linguistic or cognitive claim?
-- What is the unit of observation in a dataset?
-- Which parts of a research question become variables?
-- When do repeated observations require special statistical care?
-- What makes a dataset clean enough to analyze?
+-   What does it mean to observe evidence for a linguistic or cognitive claim?
+-   What is the unit of observation in a dataset?
+-   Which parts of a research question become variables?
+-   When do repeated observations require special statistical care?
+-   What makes a dataset clean enough to analyze?
 
 ## Core Concepts
 
@@ -57,19 +57,19 @@ Introduce missing values, inconsistent labels, impossible values, outliers, reco
 
 Add a small dataset later and walk students through the following steps:
 
-1. Identify the research question.
-2. Identify observations.
-3. Identify variables.
-4. Classify each variable type.
-5. Reshape the data into long format if needed.
+1.  Identify the research question.
+2.  Identify observations.
+3.  Identify variables.
+4.  Classify each variable type.
+5.  Reshape the data into long format if needed.
 
-```r
+``` r
 # Placeholder for future R code
 # data <- read.csv("data/example.csv")
 # str(data)
 ```
 
-```python
+``` python
 # Placeholder for future Python code
 # import pandas as pd
 # data = pd.read_csv("data/example.csv")
@@ -78,21 +78,21 @@ Add a small dataset later and walk students through the following steps:
 
 ## Practice
 
-- Find three possible variables in a psycholinguistic research question.
-- Decide whether each variable is categorical, ordinal, count, binary, or continuous.
-- Sketch what one row of the dataset should represent.
-- Convert a small wide-format table into long format.
+-   Find three possible variables in a psycholinguistic research question.
+-   Decide whether each variable is categorical, ordinal, count, binary, or continuous.
+-   Sketch what one row of the dataset should represent.
+-   Convert a small wide-format table into long format.
 
 ## Reflection
 
-- What gets lost when a theoretical question is translated into variables?
-- What becomes clearer once the data structure is explicit?
-- Which design choices affect the statistical analysis later?
+-   What gets lost when a theoretical question is translated into variables?
+-   What becomes clearer once the data structure is explicit?
+-   Which design choices affect the statistical analysis later?
 
 ## Reporting Checklist
 
-- State the unit of observation.
-- Define all variables used in the analysis.
-- Explain the study design.
-- Describe exclusions and data-cleaning decisions.
-- State whether observations are repeated within participants, items, or both.
+-   State the unit of observation.
+-   Define all variables used in the analysis.
+-   Explain the study design.
+-   Describe exclusions and data-cleaning decisions.
+-   State whether observations are repeated within participants, items, or both.

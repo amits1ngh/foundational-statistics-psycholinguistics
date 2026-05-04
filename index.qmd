@@ -1,52 +1,46 @@
 # Preface {.unnumbered}
 
-This book is a working template for a course on foundational statistics for psycholinguistics. It is designed for students who are beginning to connect questions from the humanities with empirical data, statistical models, and reproducible research reports.
+This book is intended for readers who are interested in connecting questions from the humanities with empirical data, statistical models, and reproducible research reports.
 
-The current version is intentionally skeletal. Each chapter contains a teaching structure, topic headings, and placeholders for examples, exercises, datasets, and interpretation notes. As the course develops, the placeholders can be replaced with lectures, demonstrations, code, and student-facing activities.
+The target audience includes graduate students as well as researchers who want to apply regression models, including hierarchical models, from both frequentist and Bayesian perspectives. The focus is on behavioral questions in (psycho)linguistics and related disciplines.
+
+The book develops foundational ideas in modern statistical methodology from the ground up and in a principled manner. It provides a workflow for analysis that begins with very basic ideas and gradually moves toward linear regression, hierarchical models, nonlinear approaches, and Bayesian hierarchical modeling.
+
+There are already excellent books that discuss data analysis from basic to advanced levels. The aim of this book is to bring many of these notions under one roof, so that readers can understand the ideas and choose one method over another in a principled way. For example, readers should be able to ask whether a simple regression model, a hierarchical model, or a Bayesian model is more suitable for a particular question in psycholinguistics.
+
+The methods are discussed with examples from eye-tracking experiments, including visual world paradigms, reaction time experiments, yes/no responses, and frequency responses. There is also a dedicated chapter on visualization and model fitting for Visual World Paradigm experiments within a Bayesian framework, including nonlinear assumptions.
+
+Previous work has provided a fantastic introduction to Growth Curve Analysis with a focus on the frequentist approach (cite Mirman). Here, the focus is to bring those assumptions into a Bayesian framework, so that questions about time-dependent changes in fixations can be asked in a principled way.
+
+## Prerequisites
+
+The book assumes high school algebra and basic arithmetic operations. However, the lectures are organized in such a way that an intuitive understanding of the mathematical concepts is developed through simple toy examples. The focus is on using visualization to enhance understanding, rather than on dealing only with abstract concepts. In addition, the book assumes some basic understanding of a programming language, preferably R, but you are free to use another language. This includes basic setup, variables, control structures and loops, and some visualization and data-wrangling tools, especially `ggplot2` and `tidyr`. Even if you do not have programming experience, I will discuss examples throughout the lectures, which you can practice and understand later.
+
+## Chapter Structure
+
+Each chapter contains topic headings, examples, exercises, datasets, and interpretation notes. The goal is to start with foundational introductions, discuss the ideas with the help of examples, and then connect them to concrete analysis decisions. You are also encouraged to work on your own datasets and to think about which methods are suitable for your own research problem.
 
 ## Course Goals
 
-By the end of the course, students should be able to:
+By the end of the course, readers should be able to:
 
-- Translate humanities and psycholinguistic research questions into data-oriented questions.
-- Identify variables, observations, study designs, and data structures.
-- Describe, visualize, and explore empirical data.
-- Understand statistical uncertainty and communicate inferential claims carefully.
-- Fit, interpret, and report regression models and mixed models.
-- Understand the basic logic of Bayesian modeling.
-- Produce a reproducible mini-project report.
+-   Translate humanities and psycholinguistic research questions into data-oriented questions.
+-   Identify variables, observations, study designs, and data structures.
+-   Describe, visualize, and explore empirical data.
+-   Understand statistical uncertainty and communicate inferential claims carefully.
+-   Fit, interpret, and report regression models and mixed models.
+-   Understand the basic logic of Bayesian modeling.
+-   Choose between simpler, hierarchical, nonlinear, and Bayesian models in relation to a research question.
+-   Produce a reproducible mini-project report.
 
 ## How to Use This Book
 
 Each module follows the same basic rhythm:
 
-- **Concepts:** Core vocabulary and statistical ideas.
-- **Examples:** Psycholinguistic or humanities-oriented teaching examples.
-- **Practice:** Short exercises students can complete during or after class.
-- **Reflection:** Questions that connect statistical choices to research interpretation.
-- **Reporting:** Guidance for writing results clearly and reproducibly.
-
-## Course Map
-
-| Module | Focus | Main Outcome |
-|---|---|---|
-| 1 | From Humanities Questions to Data | Students learn what counts as data and how to structure it. |
-| 2 | Describing and Visualizing Data | Students summarize and explore data before modeling. |
-| 3 | Statistical Inference | Students reason about uncertainty, sampling, and evidence. |
-| 4 | Regression Models | Students fit and interpret basic regression models. |
-| 5 | Mixed Models | Students model repeated observations from participants and items. |
-| 6 | Bayesian Models | Students understand priors, posteriors, and model checking. |
-| 7 | Research Reporting and Mini-Project | Students produce and present a reproducible analysis. |
-
-## Repository Organization
-
-- `chapters/` contains the book chapters.
-- `data/` is for small teaching datasets or links to external data.
-- `examples/` is for worked examples, scripts, and notebooks.
-- `exercises/` is for student practice tasks.
-- `assets/` is for images and other static files.
-- `.github/workflows/publish.yml` builds and publishes the book with GitHub Pages.
+-   **Concepts:** Core vocabulary and statistical ideas.
+-   **Examples:** Psycholinguistic or humanities-oriented teaching examples.
+-   **Practice:** Short exercises students can complete during or after class.
+-   **Reflection:** Questions that connect statistical choices to research interpretation.
+-   **Reporting:** Guidance for writing results clearly and reproducibly.
 
 ## Instructor Notes
-
-Replace this section with course-specific details such as weekly schedule, assessment format, software setup, and expectations for reproducible work.
