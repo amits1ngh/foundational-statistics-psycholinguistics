@@ -8,20 +8,20 @@ This module introduces mixed models for data with repeated observations, especia
 
 After this module, students should be able to:
 
-- Explain why repeated observations violate simple independence assumptions.
-- Distinguish fixed effects from random effects.
-- Interpret random intercepts and random slopes conceptually.
-- Recognize participant and item variability.
-- Compare models carefully.
-- Understand when generalized mixed models are needed.
+-   Explain why repeated observations violate simple independence assumptions.
+-   Distinguish fixed effects from random effects.
+-   Interpret random intercepts and random slopes conceptually.
+-   Recognize participant and item variability.
+-   Compare models carefully.
+-   Understand when generalized mixed models are needed.
 
 ## Key Questions
 
-- Which observations come from the same participant?
-- Which observations come from the same item?
-- Which effects are of theoretical interest?
-- Which sources of variation should be modeled?
-- What changes when the outcome is binary, count-based, or ordinal?
+-   Which observations come from the same participant?
+-   Which observations come from the same item?
+-   Which effects are of theoretical interest?
+-   Which sources of variation should be modeled?
+-   What changes when the outcome is binary, count-based, or ordinal?
 
 ## Core Concepts
 
@@ -61,41 +61,41 @@ More complex random-effects structures can be theoretically appropriate, but the
 
 Add a dataset later and guide students through:
 
-1. Identifying repeated observations.
-2. Fitting a random-intercept model.
-3. Adding random slopes if justified.
-4. Comparing model predictions.
-5. Reporting fixed and random effects.
+1.  Identifying repeated observations.
+2.  Fitting a random-intercept model.
+3.  Adding random slopes if justified.
+4.  Comparing model predictions.
+5.  Reporting fixed and random effects.
 
-```r
+``` r
 # Placeholder for future R code
 # library(lme4)
 # model <- lmer(response_time ~ condition + (1 | participant) + (1 | item), data = data)
 # summary(model)
 ```
 
-```python
+``` python
 # Placeholder for future Python code
 # Add a mixed-model example later with the package used in your course.
 ```
 
 ## Practice
 
-- Mark the participant and item columns in a trial-level dataset.
-- Decide whether a random intercept is needed for participants, items, or both.
-- Explain a random slope without using software-specific language.
-- Compare two model formulas and describe the substantive difference.
+-   Mark the participant and item columns in a trial-level dataset.
+-   Decide whether a random intercept is needed for participants, items, or both.
+-   Explain a random slope without using software-specific language.
+-   Compare two model formulas and describe the substantive difference.
 
 ## Reflection
 
-- What does it mean to generalize beyond the participants and items in a study?
-- How should convergence warnings be handled in a teaching context?
-- When is a simpler model easier to defend?
+-   What does it mean to generalize beyond the participants and items in a study?
+-   How should convergence warnings be handled in a teaching context?
+-   When is a simpler model easier to defend?
 
 ## Reporting Checklist
 
-- State the full model formula.
-- Describe fixed effects and random effects separately.
-- Report convergence or model-fitting issues.
-- Explain the grouping structure.
-- Interpret effects in the scale relevant to the research question.
+-   State the full model formula.
+-   Describe fixed effects and random effects separately.
+-   Report convergence or model-fitting issues.
+-   Explain the grouping structure.
+-   Interpret effects in the scale relevant to the research question.

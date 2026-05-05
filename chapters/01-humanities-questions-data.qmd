@@ -1,59 +1,313 @@
-# From Humanities Questions to Data
+# From Research Questions to Data
 
-## Module Overview
+## Overview
 
-This module introduces the movement from qualitative or theoretical questions to structured empirical data. The goal is not to reduce humanities questions to numbers, but to show how particular research claims can be made observable, countable, comparable, or modelable.
+In this chapter, we will learn how to move from qualitative or theoretical questions to empirical data that can be examined with statistical methods. This movement is important because most questions in the humanities, linguistics, and psycholinguistics do not arrive in the form of ready-made numbers. They usually begin as questions about interpretation, behavior, processing, meaning, memory, attention, or choice. To study such questions statistically, we first need to decide what can be observed, counted, compared, or measured.
+
+For any scientific question, we need a framework that converts the question into a simpler and testable form. This does not mean that the original question becomes simple. Rather, it means that we identify the part of the question for which we can collect evidence. Once this part is clear, we can ask whether an effect has a direction, whether it has a magnitude, and how uncertain we are about it. For example, instead of only asking whether a sentence is difficult to process, we may ask whether reading times are longer in one condition than in another. Instead of only asking whether listeners expect a particular referent, we may ask whether fixation proportions change over time.
+
+Two ideas are central for this translation. The first is the translation of a research question into variables and effects between variables. This means deciding what the outcome is, what predictors may explain variation in that outcome, and what unit of observation the data should have. The second is the idea of a data-generating process. This means thinking about how the observations could have arisen and what kind of statistical distribution is appropriate for them. A reaction time, a binary yes/no response, a fixation count, and a Likert-scale judgment are not generated in the same way, and they should not automatically be modeled in the same way.
+
+In this chapter, we will develop these two ideas step by step. We will first discuss what can count as data in (psycho)linguistics, then move to variables and observations, and then connect data structure to study design and later modeling choices.
 
 ## Learning Objectives
 
-After this module, students should be able to:
+After this chapter, readers should be able to:
 
--   Explain what can count as data in psycholinguistics and related humanities fields.
+-   Explain what can count as data in psycholinguistics, linguistics, and related fields.
+-   Translate a theoretical or qualitative research question into a testable empirical form.
+-   Identify outcome variables, predictor variables, observations, and units of analysis.
 -   Distinguish variables from observations.
--   Identify common data types.
--   Describe basic study designs.
+-   Recognize that different kinds of outcomes may require different assumptions about the data-generating process.
+-   Describe basic study designs and explain how design choices shape the dataset.
 -   Recognize repeated observations in participant and item data.
--   Explain why tidy, long-format data are useful for analysis.
-
-## Key Questions
-
--   What does it mean to observe evidence for a linguistic or cognitive claim?
--   What is the unit of observation in a dataset?
--   Which parts of a research question become variables?
--   When do repeated observations require special statistical care?
--   What makes a dataset clean enough to analyze?
+-   Explain why long and wide data formats are useful for different stages of analysis.
 
 ## Core Concepts
 
-### What Counts as Data?
+### What is data in (psycho)linguistics?
 
-Use this section to discuss different forms of data: reading times, acceptability judgments, corpus frequencies, eye-tracking measures, reaction times, survey responses, annotations, transcriptions, and qualitative codes.
+Data are observations that have been recorded in a systematic way. In (psycho)linguistics, such observations can take many forms. They may come from experiments, corpora, surveys, annotations, speech recordings, reading studies, eye-tracking studies, or behavioral tasks. What matters is not only that something has been recorded, but also that we know what the observation represents.
 
-::: {.callout-note title="Teaching Example Placeholder"}
-Add a short example showing how a humanities question can become an empirical question. For example, compare a broad question about ambiguity with measurable outcomes such as reading time, interpretation choice, or judgment rating.
+For example, a reaction time is not just a number in milliseconds. It is a measurement of how long a participant took to respond under a particular condition, to a particular item, in a particular task. A fixation proportion in a visual world experiment is not just a decimal value. It is a summary of where participants looked during a specific time window. A corpus frequency is not just a count. It depends on the corpus, the definition of the linguistic unit, and the procedure used to count it.
+
+Typical datasets in linguistics and psychology include both discrete and continuous measures.
+
+| Kind of measure | Examples | Typical question |
+|------------------------|------------------------|------------------------|
+| Binary | yes/no responses, correct/incorrect responses, present/absent annotations | Did the participant choose the target? |
+| Ordinal | Likert-scale acceptability ratings, confidence ratings | Are judgments higher in one condition than another? |
+| Counts | word frequencies, number of fixations, number of errors | How often did an event occur? |
+| Continuous | reaction times, reading times, gaze duration, acoustic duration, saccade velocity | How large or how long was the response? |
+| Text-derived | coded categories, syntactic annotations, semantic labels | Which linguistic pattern is present? |
+
+These distinctions matter because the type of data is connected to the assumptions we make about the underlying data-generating process. A data-generating process is the process that we assume could have produced the observations we see. In statistical terms, we often express this by saying that the outcome variable comes from a particular probability distribution.
+
+For example, if we assume that a continuous outcome comes from a normal distribution, we are assuming that observations tend to cluster around a central value, with fewer observations farther away from the center. If we sampled many observations from such a process, the shape of the observations would often look like a bell-shaped curve. This does not mean that every continuous measure in psycholinguistics is normally distributed. Reading times and reaction times, for example, are often right-skewed. The point is that the distributional assumption should match the kind of outcome we are trying to explain.
+
+::: {.callout-note title="Normal Distribution"}
+A normal distribution is one common distribution for continuous data. It assumes that most observations lie near the mean, while fewer observations lie far away from it. The spread around the mean is described by the standard deviation.
 :::
+
+Other outcomes require different assumptions. A binary outcome, for example, can only take two values, such as 0 and 1, yes and no, or correct and incorrect. Such an outcome cannot be adequately described by a normal distribution, because a normal distribution allows many possible values on a continuous scale. Instead, we need a distribution that is appropriate for binary data. Similarly, count data, proportions, ordered ratings, and continuous time measures may each require different assumptions.
+
+This is why the first step in analysis is not fitting a model. The first step is understanding what kind of observation we have. Once we know what the outcome is, how it was measured, and what values it can take, we can begin to think about the random variable that represents it. In later chapters, we will often denote the outcome by `Y`. The symbol is simple, but the idea is important: `Y` stands for the variable whose variation we want to understand.
 
 ### Variables and Observations
 
-Introduce rows as observations and columns as variables. Show the difference between a participant, an item, a trial, and a measurement.
+Whenever we collect data in a (psycho)linguistic experiment, we make decisions about what will be observed, what will be manipulated, and what kind of variation we want to explain. These decisions appear in the dataset as variables and observations. In a typical data table, rows are observations and columns are variables. This simple structure is the starting point for almost everything that comes later.
 
-### Data Types
+An observation is one recorded unit of data. Depending on the study, one row may correspond to one participant, one trial, one sentence, one item, one word, one fixation, or one time bin. There is no universal rule that says what a row must be. The unit of observation depends on the research question and the design of the study. In many psycholinguistic experiments, one row represents one response by one participant to one item in one condition. In eye-tracking data, however, one row may represent a fixation, a time window, or a participant-item-time-bin combination.
 
-Cover categorical, ordinal, count, continuous, binary, and text-derived variables. Explain why data type affects visualization, summaries, and modeling choices.
+A variable is a property that can vary across observations. Some variables describe the design of the study, such as condition, group, item type, language, or time window. Other variables describe the measured response, such as reaction time, reading time, accuracy, fixation proportion, or acceptability rating. Still other variables identify the structure of the data, such as participant ID, item ID, trial number, or list.
+
+The same dataset can often be understood at two levels. At a descriptive level, we can say that the dataset has rows and columns. At a modeling level, some columns become predictors, one column becomes the outcome, and the statistical model describes how the predictors are related to the outcome. This is where the language of independent and dependent variables, or predictor and outcome variables, becomes useful.
+
+We can write this idea in a general way:
+
+$$
+Y_i \sim p(\cdot \mid X_i, \theta)
+$$
+
+Here, $Y_i$ is the random variable for the outcome of observation $i$, $y_i$ is the observed value, $X_i$ represents the predictor information for that observation, and $\theta$ represents the parameters of the model. The expression says that the outcome is treated as coming from a probability distribution whose shape depends on the predictors and the model parameters.
+
+For a simple continuous outcome, this idea may later become a regression model such as:
+
+$$
+Y_i \sim \text{Normal}(\mu_i, \sigma)
+$$
+
+$$
+\mu_i = \beta_0 + \beta_1 X_i
+$$
+
+This says that the outcome $Y_i$ is generated from a normal distribution with mean $\mu_i$ and standard deviation $\sigma$. The mean $\mu_i$ is not fixed for everyone; it changes as a function of the predictor $X_i$. The parameter $\beta_0$ is the intercept, and $\beta_1$ describes how much the expected outcome changes when the predictor changes.
+
+At this point, the important idea is not the equation itself, but the logic behind it. A statistical model is a way of describing a mapping from predictors to an outcome. The goal of statistical modeling is to estimate the parameters that make this mapping useful for the data we have, while also being honest about uncertainty.
+
+#### Predictor or Independent Variables
+
+Predictor variables are variables used to explain variation in the outcome. In experimental work, these are often called independent variables because the researcher controls or manipulates them. For example, in a lexical decision experiment, the predictor may be word frequency, word length, semantic relatedness, or experimental condition. In a visual world experiment, predictors may include condition, object type, time, language background, or whether a word is phonologically related to a target.
+
+The term predictor is slightly broader than independent variable. An independent variable is usually part of the experimental design. A predictor can also be an observed property that was not manipulated directly. For example, participant age, vocabulary size, word frequency, and trial order can all be predictors, even if the researcher did not manipulate them.
+
+In model formulas, predictors are usually written on the right-hand side. For example:
+
+$$
+Y_i = f(X_i)
+$$
+
+or, in a regression form:
+
+$$
+\mu_i = \beta_0 + \beta_1 X_i
+$$
+
+Here, $X_i$ is the predictor value for observation $i$. If $X_i$ represents condition, then $\beta_1$ tells us how the expected outcome changes across conditions. If $X_i$ represents word frequency, then $\beta_1$ tells us how the expected outcome changes as word frequency changes.
+
+A model can also contain more than one predictor:
+
+$$
+\mu_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i}
+$$
+
+Here, $X_{1i}$ and $X_{2i}$ are two predictors for the same observation. For example, $X_{1i}$ may represent condition and $X_{2i}$ may represent word frequency. The model asks how each predictor is related to the expected outcome, while taking the other predictor into account.
+
+Sometimes we are not only interested in the separate effects of predictors, but also in whether the effect of one predictor depends on another predictor. This is called an interaction. We can write a simple interaction model as:
+
+$$
+\mu_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \beta_3 X_{1i}X_{2i}
+$$
+
+The term $X_{1i}X_{2i}$ represents the interaction. In words, it asks whether the effect of $X_1$ changes depending on the value of $X_2$. This is common in psycholinguistics. For example, the effect of sentence type may depend on participant group, or the effect of phonological overlap may change over time in a visual world paradigm.
+
+#### Outcome or Dependent Variables
+
+The outcome variable is the variable we want to explain. In experimental terminology, it is often called the dependent variable because its values are expected to depend, at least partly, on the predictors. In a data table, the outcome is one column, but conceptually it is the part of the data-generating process we are trying to understand.
+
+In model formulas, the outcome is usually written on the left-hand side:
+
+$$
+Y_i \sim \text{Distribution}(\text{parameters}_i)
+$$
+
+The choice of distribution depends on the kind of outcome. If the outcome is continuous, such as reading time or acoustic duration, we may begin with a continuous distribution. If the outcome is binary, such as correct/incorrect or yes/no, we need a distribution for binary outcomes. If the outcome is a count, such as number of fixations or number of errors, we need a distribution for counts.
+
+For a continuous outcome, a simple model may be written as:
+
+$$
+Y_i \sim \text{Normal}(\mu_i, \sigma)
+$$
+
+For a binary outcome, a more appropriate starting point is:
+
+$$
+Y_i \sim \text{Bernoulli}(p_i)
+$$
+
+Here, $Y_i$ can only be 0 or 1, and $p_i$ is the probability that the outcome is 1. The predictors can then be used to explain this probability:
+
+$$
+\text{logit}(p_i) = \beta_0 + \beta_1 X_i
+$$
+
+For count data, one possible starting point is:
+
+$$
+Y_i \sim \text{Poisson}(\lambda_i)
+$$
+
+Here, $\lambda_i$ is the expected count for observation $i$. Again, predictors can be used to explain why this expected count changes across observations.
+
+The main point is that the outcome variable is not just "the thing we measured." It is the random variable whose variation we want to model. Once we decide what the outcome is, we also have to ask what values it can take, what distribution may describe it, and which predictors may explain systematic variation in it.
+
+For example, suppose we ask whether syntactic complexity affects reading time. The outcome could be reading time on a critical word, denoted as $Y_i$. The predictor could be sentence condition, denoted as $X_i$. A simple model then asks whether the expected reading time changes across sentence conditions. In this sense, the model connects the theoretical question to an empirical outcome:
+
+$$
+Y_i \equiv \text{ReadingTime}_i,\quad
+Y_i \sim p(\cdot \mid \text{Condition}_i, \theta)
+$$
+
+This notation is only a compact way of writing the same idea: the measured outcome is treated as the result of a data-generating process, and the predictors are used to describe how that process changes across observations.
 
 ### Study Designs
 
-Introduce between-subject, within-subject, factorial, observational, experimental, corpus-based, and survey designs.
+Study design describes how the data were produced. Before choosing a statistical model, we need to know whether the researcher manipulated something, observed something as it naturally occurred, sampled from a corpus, or collected responses through a survey. The same outcome variable can mean different things depending on the design.
+
+For example, suppose the outcome is reading time. A reading time from a controlled experiment, where sentence type was manipulated by the researcher, has a different interpretation from a reading time collected during naturalistic reading. In the first case, the design may allow a more direct comparison between conditions. In the second case, many properties of the sentence, reader, and context may vary together. Both kinds of data are useful, but they answer different kinds of questions.
+
+A useful first distinction is between experimental and observational designs.
+
+| Design type | What happens? | Example |
+|------------------------|------------------------|------------------------|
+| Experimental | The researcher manipulates one or more predictors. | Participants read sentences that differ in syntactic complexity. |
+| Observational | The researcher records naturally occurring variation. | A corpus is used to study how often a construction appears in different genres. |
+| Survey-based | Participants provide judgments, choices, ratings, or background information. | Speakers rate sentence acceptability on a 1-7 scale. |
+| Corpus-based | The data come from text, speech, or annotated language material. | Word frequencies are extracted from a spoken-language corpus. |
+
+In an experiment, the manipulated variable is usually called a condition or factor. A factor can have two or more levels. For example, a sentence-type factor may have the levels `simple` and `complex`, or a relatedness factor may have the levels `related`, `unrelated`, and `control`.
+
+We also need to know how conditions are assigned to participants and items. Two common design structures are between-subject and within-subject designs.
+
+In a between-subject design, different participants appear in different conditions. For example, one group of participants may receive a training intervention, while another group receives no intervention. Here, each participant belongs to only one group. Differences between conditions are therefore also differences between groups of people, so participant-level variability becomes important.
+
+In a within-subject design, the same participant contributes data in more than one condition. For example, each participant may read both simple and complex sentences. This design is common in psycholinguistics because it allows us to compare conditions within the same participant. However, it also means that observations from the same participant are not independent of each other.
+
+The same logic applies to items. A design can be between-item, where different items occur in different conditions, or within-item, where the same item appears in more than one condition, often through different lists or counterbalancing. In psycholinguistics, participants and items both matter because we usually want to make claims that go beyond the particular people and sentences used in the study.
+
+A factorial design contains more than one predictor of interest. For example, a study may manipulate both sentence type and word frequency:
+
+$$
+\mu_i = \beta_0 + \beta_1 \text{SentenceType}_i + \beta_2 \text{Frequency}_i + \beta_3 \text{SentenceType}_i \times \text{Frequency}_i
+$$
+
+This model corresponds to a design where we ask about two main effects and one interaction. The main effect of sentence type asks whether reading times differ between sentence types. The main effect of frequency asks whether reading times differ as word frequency changes. The interaction asks whether the effect of sentence type changes depending on word frequency.
+
+The important point is that the design is not separate from the analysis. The design determines what the rows of the dataset represent, which columns can be treated as predictors, which comparisons are meaningful, and what kind of repeated structure the model has to respect.
 
 ### Repeated Observations
 
-Discuss why psycholinguistic datasets often contain multiple responses from the same participant and multiple responses to the same item.
+Psycholinguistic datasets usually contain repeated observations. A participant rarely gives only one response, and an item is rarely seen only once in the full dataset. Instead, participants respond to many items, and items are often seen by many participants. This creates a crossed structure: observations are grouped by participants and also by items.
+
+For example, in a reading-time experiment, one row may represent one trial:
+
+| participant | item    | condition | reading_time |
+|-------------|---------|-----------|--------------|
+| P01         | item_01 | simple    | 430          |
+| P01         | item_02 | complex   | 610          |
+| P02         | item_01 | simple    | 390          |
+| P02         | item_02 | complex   | 570          |
+
+Here, participant `P01` contributes more than one observation, and item `item_01` is observed for more than one participant. The rows are not unrelated pieces of information. Responses from the same participant may be similar because some participants are generally faster or slower. Responses to the same item may be similar because some sentences are generally easier or harder.
+
+This matters because many basic statistical methods assume that observations are independent. Independence means that one observation does not tell us much about another observation. In repeated-measures data, this assumption is often not realistic. If participant `P01` is generally slow, then knowing one reading time from `P01` gives us some information about another reading time from `P01`. If an item is unusually difficult, then different participants may all show longer reading times for that item.
+
+We can write this idea with indices:
+
+$$
+Y_{ijk}
+$$
+
+Here, $Y_{ijk}$ may represent the outcome for participant $j$, item $k$, and observation or trial $i$. The value is not only a function of the experimental condition. It may also depend on participant-specific and item-specific tendencies.
+
+A simple way to express this idea is:
+
+$$
+Y_{ijk} \sim \text{Normal}(\mu_{ijk}, \sigma)
+$$
+
+$$
+\mu_{ijk} = \beta_0 + \beta_1 X_{ijk} + u_j + v_k
+$$
+
+In this notation, $X_{ijk}$ is the predictor for that observation, $u_j$ is a participant-specific deviation, and $v_k$ is an item-specific deviation. The terms $u_j$ and $v_k$ allow participants and items to have their own baselines. We will return to this in more detail when discussing mixed models. For now, the important point is that the dataset itself already tells us whether such structure exists.
+
+Repeated observations require special statistical care when the same participant, item, sentence, word, speaker, text, or time series contributes multiple observations. This is especially common in:
+
+-   reaction-time studies with many trials per participant;
+-   eye-tracking studies with observations across time;
+-   judgment studies with multiple sentences per participant;
+-   corpus studies with repeated words, speakers, texts, or genres;
+-   production studies where the same speaker contributes many utterances.
+
+Ignoring repeated structure can make uncertainty look smaller than it really is. It can also make effects appear more stable than they are. A careful analysis therefore begins by asking where repetition enters the data: through participants, items, time points, texts, speakers, or some combination of these.
 
 ### Data Cleaning and Long Format
 
-Introduce missing values, inconsistent labels, impossible values, outliers, recoding, and the difference between wide and long data.
+Data cleaning is the process of making the dataset clear, consistent, and usable for analysis. It is not a mechanical step that happens before the "real" analysis begins. Cleaning decisions are part of the analysis because they determine which observations are included, how variables are defined, and how the results can be interpreted.
 
-## Worked Example
+Common cleaning tasks include checking for missing values, inconsistent labels, impossible values, duplicate rows, coding errors, and outliers. In psycholinguistic data, these issues are common. A reaction time may be recorded as `0`, a participant ID may appear as both `P01` and `p01`, a condition label may be misspelled, or a trial may be missing because the participant did not respond.
+
+| Cleaning issue | Example | Why it matters |
+|------------------------|------------------------|------------------------|
+| Missing values | no response on a trial | The model needs to know whether the value is absent or truly zero. |
+| Inconsistent labels | `related`, `Related`, `rel` | The same condition may be treated as three different conditions. |
+| Impossible values | negative reaction time | The value cannot come from the intended measurement process. |
+| Duplicate rows | the same trial appears twice | The observation receives too much weight in the analysis. |
+| Outliers | extremely long reaction time | The value may be valid, but it may strongly affect summaries and models. |
+| Recoding errors | condition coded backwards | The interpretation of the effect becomes wrong. |
+
+Cleaning should always be documented. If trials are excluded because reaction times are shorter than 200 ms or longer than 3000 ms, this should be stated. If participants are excluded because of low accuracy, this should also be stated. The goal is not to remove all inconvenient observations, but to make principled decisions about whether each observation belongs to the data-generating process we intend to model.
+
+After cleaning, the next question is how the data should be organized. Two common formats are wide format and long format.
+
+In wide format, different measurements are stored in different columns. For example:
+
+| participant | simple_rt | complex_rt |
+|-------------|----------:|-----------:|
+| P01         |       430 |        610 |
+| P02         |       390 |        570 |
+
+This format is sometimes convenient for presentation or for simple paired comparisons. However, it becomes less useful when there are many conditions, many trials, or repeated observations across participants and items.
+
+In long format, each row represents one observation, and the condition is stored as a variable:
+
+| participant | condition | reading_time |
+|-------------|-----------|-------------:|
+| P01         | simple    |          430 |
+| P01         | complex   |          610 |
+| P02         | simple    |          390 |
+| P02         | complex   |          570 |
+
+Long format is usually the preferred structure for statistical modeling and visualization because it makes the unit of observation explicit. The outcome has one column, and predictors have their own columns. This structure maps naturally onto model formulas:
+
+$$
+\text{reading_time}_i \sim p(\cdot \mid \text{condition}_i, \theta)
+$$
+
+For more complex psycholinguistic data, a long-format table may include participant, item, trial, condition, time window, response, accuracy, and other predictors:
+
+| participant | item    | trial | condition | time_bin | fixation_prop |
+|-------------|---------|------:|-----------|---------:|--------------:|
+| P01         | item_01 |     1 | related   |      100 |          0.12 |
+| P01         | item_01 |     1 | related   |      200 |          0.21 |
+| P01         | item_01 |     1 | related   |      300 |          0.35 |
+
+This format is especially useful for eye-tracking and time-course data because each row can represent a specific observation at a specific point or interval in time. It also makes it easier to visualize change over time, group by participant or item, and fit models that include repeated observations.
+
+The practical rule is simple: each row should correspond to one observation, each column should correspond to one variable, and each value should have one meaning. Once the data are arranged in this way, it becomes much easier to describe the data, visualize it, and connect it to a statistical model.
+
+## Example
 
 Add a small dataset later and walk students through the following steps:
 
